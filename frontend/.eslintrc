@@ -1,0 +1,106 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "eslint-config-prettier"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "paths": [
+          "src"
+        ],
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    }
+  },
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true, // допускает внешние двойные кавычки при вложенности
+        "allowTemplateLiterals": true
+      }
+    ],
+    "@typescript-eslint/naming-convention": [
+      "off",
+      {
+        "selector": "variables",
+        "format": ["camelCase"]
+      }
+    ],
+    "indent": [
+      "error",
+      2,
+      { "SwitchCase": 1, "offsetTernaryExpressions": true }
+    ],
+    "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 0 }],
+    "import/prefer-default-export": "off",
+    "react/function-component-definition": "off", // отключил для возможности записи функциональных компонентов в стрелочном виде
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages", // в строке импорта не выдает ошибку на отсутствие расширений
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "react/self-closing-comp": ["error", {
+      "component": true,
+      "html": true
+    }],
+    "arrow-body-style": "off", // не наставивает на синтаксисе стрелочной (return-ы)
+    "max-len": [
+      "warn",
+      {
+        "code": 120,
+        "tabWidth": 2,
+        "ignoreComments": false,
+        "ignoreTrailingComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type"
+        ]
+      }
+    ],
+    "react/display-name": "off",
+    "import/no-extraneous-dependencies": "off"
+  }
+}

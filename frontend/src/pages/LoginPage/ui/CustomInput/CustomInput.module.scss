@@ -1,0 +1,52 @@
+@use '../../../../shared/styles/mixins';
+
+
+.customInput {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+.customInput+.customInput {
+  @include mixins.toRem('margin-top', 25);
+}
+
+.label {
+  @include mixins.toRem('margin-bottom', 5);
+  @include mixins.toRem('font-size', 14);
+  color: #828282;
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+  @include mixins.toRem('height', 45);
+  @include mixins.toRem('padding', 15);
+}
+
+.error {
+  border: 1px solid red;
+}
+
+.errorTooltip {
+  position: absolute;
+  @include mixins.toRem('height', 45);
+  @include mixins.toRem('width', 150);
+  @include mixins.toRem('top', -31);
+  @include mixins.toRem('right', -10);
+  @include mixins.toRem('padding', 15);
+  background: #ffffff;
+  border: 1px solid #7F265B;
+  z-index: 2;
+
+  &:after {
+    content:'';
+    position: absolute;
+    left: 50%;
+    @include mixins.toRem('bottom', -18);
+    @include mixins.toRem('margin-left', -16);
+    border: 1rem solid transparent;
+    border-top: .5rem solid #7F265B;
+  }
+}

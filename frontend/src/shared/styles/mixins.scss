@@ -1,0 +1,5 @@
+@use 'sass:math';
+
+@mixin toRem($property, $value) {
+    #{$property}: math.div($value, 12) + rem;
+}

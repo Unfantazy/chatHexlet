@@ -1,0 +1,19 @@
+@use '../../../../shared/styles/mixins';
+
+.form {
+  max-width: 35%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.submitBtn {
+  background-color: #7F265B;
+  width: 100%;
+  @include mixins.toRem('height', 45);
+  @include mixins.toRem('margin-top', 30);
+  color: #ffffff;
+  font-weight: 700;
+}
